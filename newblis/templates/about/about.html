@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
 {% load wagtailcore_tags wagtailimages_tags static %}
-{% block content %}
-        {% include 'banner.html' %}
-        {% include 'about/about_us_section.html' %}
-    
+{% block content %}    
         <!-- Fun Fact And Features -->
         {% image page.features.counter_background fill-1831x539 as counter_background %}
         <section class="fun-fact-and-features"  style="background-image: url({{counter_background.url}});">
@@ -30,93 +27,7 @@
             </div>
         </section>
         <!--End Fun Fact Section -->
-    
-        <!-- Testimonial Section Two-->
-        <section class="testimonial-section-two">
-            <div class="auto-container">
-                <div class="sec-title">
-                    <span class="float-text">Testimonial</span>
-                    <h2>What Clients Says</h2>
-                </div>
-    
-                <div class="testimonial-carousel-two owl-carousel owl-theme">
-                    {% for testimonial in page.testimonials.testimonials %}
-                            {% include_block testimonial %}
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-        <!--End Testimonial Section Two-->
-    
-        <!--Clients Section-->
-        <section class="clients-section style-two">
-            <div class="auto-container">
-                <div class="sponsors-outer">
-                    <!--Sponsors Carousel-->
-                    <ul class="sponsors-carousel owl-carousel owl-theme">
-                        {% for client in page.clients %}
-                            {% image client.value.img fill-150x100 as client_img %}
 
-                            <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{client_img.url}}" alt=""></a></figure></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!--End Clients Section-->
-    
-         <!-- Process Section -->
-        <section class="process-section" style="background-image: url(../static/images/background/8.jpg);">
-            <div class="auto-container">
-                <div class="sec-title light">
-                    <span class="float-text">HOW WE WORK</span>
-                    <h2>Proven Process</h2>
-                </div>
-                <div class="row">
-                    <!-- Process Block -->
-                    <div class="process-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <span class="count">01</span>
-                            <h4><a href="service-detail.html">Concept</a></h4>
-                            <div class="text">When an unknown printer took a galley of type and scrambled it to make a book.</div>
-                            <div class="link-box"><a href="service-detail.html">Read More</a></div>
-                        </div>
-                    </div>
-    
-                    <!-- Process Block -->
-                    <div class="process-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <span class="count">02</span>
-                            <h4><a href="service-detail.html">Idea</a></h4>
-                            <div class="text">When an unknown printer took a galley of type and scrambled it to make a book.</div>
-                            <div class="link-box"><a href="service-detail.html">Read More</a></div>
-                        </div>
-                    </div>
-    
-                    <!-- Process Block -->
-                    <div class="process-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <span class="count">03</span>
-                            <h4><a href="service-detail.html">Design</a></h4>
-                            <div class="text">When an unknown printer took a galley of type and scrambled it to make a book.</div>
-                            <div class="link-box"><a href="service-detail.html">Read More</a></div>
-                        </div>
-                    </div>
-    
-                    <!-- Process Block -->
-                    <div class="process-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <span class="count">04</span>
-                            <h4><a href="service-detail.html">excecution</a></h4>
-                            <div class="text">When an unknown printer took a galley of type and scrambled it to make a book.</div>
-                            <div class="link-box"><a href="service-detail.html">Read More</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--End Process Section -->
-    
         <!-- Team Section -->
         <section class="team-section">
             <div class="auto-container">

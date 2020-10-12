@@ -10,19 +10,6 @@
                 <!--Sidebar Side-->
                 <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
                     <aside class="sidebar services-sidebar">
-                    
-                        <!--Blog Category Widget-->
-                        <!-- <div class="sidebar-widget sidebar-blog-category">
-                            <ul class="blog-cat">
-                                <li class="active"><a href="/services">COMMERCIAL DESIGN</a></li>
-                                <li><a href="/services">LANDESCAPE</a></li>
-                                <li><a href="/services">INTERIOR DESIGN</a></li>
-                                <li><a href="/services">HOUSE INTERIRO DESIGN</a></li>
-                                <li><a href="/services">COMPLEATE INTERIOR</a></li>
-                                <li><a href="/services">ARCHITECTURE DESIGN</a></li>
-                            </ul>
-                        </div> -->
-
                         <!--Brochure-->
                         <div class="sidebar-widget brochure-widget">
                             <h3 class="sidebar-title">Download Brochures</h3>
@@ -35,16 +22,6 @@
                                     <a href="{{brochure.value.get_link.url}}" target="_blank" class="overlay-link"></a>
                                 </div>
                             {% endfor %}                            
-                        </div>
-                    
-                        <!--Help Box-->
-                        <div class="help-box" style="background-image:url(../static/images/resource/brochure-bg.jpg)">
-                            <div class="inner">
-                                <span class="title">Quick Contact</span>
-                                <h2>Get Solution</h2>
-                                <div class="text">Contact us at the Interior office nearest to you or submit a business inquiry online.</div>
-                                <a class="theme-btn btn-style-three" href="/contact">Contact</a>
-                            </div>
                         </div>
                     </aside>
                 </div>
@@ -68,34 +45,6 @@
                             {% endfor %}
                             
                         </div>
-                        
-                        <!--Product Info Tabs-->
-                        <div class="product-info-tabs">
-                            <!--Product Tabs-->
-                            <div class="prod-tabs tabs-box">
-                                <!--Tab Btns-->
-                                <ul class="tab-btns tab-buttons clearfix">
-                                    {% for tab in page.tabs.tabs %}
-                                        <li data-tab="#{{tab.value.tab_title|lower}}" class="tab-btn {% if forloop.counter == 1 %} active-btn {% endif %}">{{tab.value.tab_title}}</li>
-                                    {% endfor %}
-                                    <!-- <li data-tab="#prod-details" class="tab-btn active-btn">Precautions</li>
-                                    <li data-tab="#prod-spec" class="tab-btn">Intelligence</li>
-                                    <li data-tab="#prod-reviews" class="tab-btn">Specializations</li> -->
-                                </ul>
-                                
-                                <!--Tabs Container-->
-                                <div class="tabs-content">
-                                    {% for tab in page.tabs.tabs %}
-                                        <div class="tab {% if forloop.counter == 1 %} active-tab {% endif %}" id="{{tab.value.tab_title|lower}}">
-                                            <div class="content">
-                                                <p>{{tab.value.tab_content}}</p>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                        <!--End Product Info Tabs-->  
                     </div>
                 </div>
             </div>

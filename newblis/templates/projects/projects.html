@@ -33,21 +33,6 @@
                     {% endfor %}
                 </div>
             </div>
-
-            <!--Post Share Options-->
-            <div class="styled-pagination">
-                <ul class="clearfix">
-                    {% if projects.has_previous %}
-                        <li class="prev-post"><a href="?page={{ projects.previous_page_number }}"><span class="fa fa-long-arrow-left"></span> Prev</a></li>
-                    {% endif %}
-                    {% for page_num in projects.paginator.page_range %}
-                      <li {% if page_num == projects.number %} class="active" {% endif %}><a href="?page={{ page_num }}">{{ page_num }}</a></li>
-                    {% endfor %}
-                    {% if projects.has_next %}
-                      <li class="next-post"><a href="?page={{ projects.next_page_number }}"> Next <span class="fa fa-long-arrow-right"></span> </a></li>
-                    {% endif %}
-                </ul>
-            </div>
         </div>
     </section>
 
