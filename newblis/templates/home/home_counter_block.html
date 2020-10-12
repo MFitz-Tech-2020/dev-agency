@@ -1,0 +1,12 @@
+<!--Column-->
+<div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" {% if self.delay %} data-wow-delay="{{self.delay}}" {% endif %}>
+    <div class="count-box">
+        <div class="count"><span class="count-text" data-speed="{{self.speed}}" data-stop="{{self.number}}">0</span>{% if self.thousand %}K{% endif %}</div>
+        <h4 class="counter-title">{{self.text | safe }}</h4>
+    </div>
+</div>
+<style>
+    .counter-title .rich-text p{
+        color: #fff;
+    }
+</style>

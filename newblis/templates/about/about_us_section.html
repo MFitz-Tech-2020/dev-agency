@@ -1,0 +1,45 @@
+{% load wagtailcore_tags wagtailimages_tags static %}
+
+<!-- About Section -->
+{% image page.about_us.bg_image fill-1831x945 as about_us_bg_img %}
+<section class="about-section" style="background-image: url({{about_us_bg_img.url}});">
+    <div class="auto-container">
+        <div class="row no-gutters">
+            <!-- Image Column -->
+            <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                <div class="inner-column">
+                    <div class="title-box wow fadeInLeft" data-wow-delay='1200ms'>
+                        <h2>ABOUT <br> US</h2>
+                    </div>
+                    {% image page.about_us.alphabet_image fill-450x420 as about_us_alpha_img %}
+                    {% image page.about_us.image fill-355x635 as about_us_img %}
+                    <div class="image-box wow fadeInRight" data-wow-delay='600ms'>
+                        <figure class="alphabet-img"><img src="{{about_us_alpha_img.url}}" alt=""></figure>
+                        <figure class="image"><img src="{{about_us_img.url}}" alt=""></figure>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                <div class="inner-column wow fadeInLeft">
+                    <div class="content-box">
+                        <div class="title">
+                            <h2>{{page.about_us.content_title | safe }}</h2>
+                        </div>
+                        <div class="text">{{page.about_us.content_text | safe}}</div>
+                        <div class="link-box"><a href="/about" class="theme-btn btn-style-one">About Us</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End About Section -->
+
+<style>
+    .inner-column .content-box .title h2 p {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+</style>

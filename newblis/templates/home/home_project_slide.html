@@ -1,0 +1,16 @@
+<!-- Project Block -->
+{% load wagtailimages_tags %}
+{% image self.image fill-970x520 as img %}
+<div class="project-block-two">
+    <div class="image-box">
+        <figure class="image"><img src="{{img.url}}" alt=""></figure>
+    </div>
+    <div class="info-box">
+        <div class="inner-box">
+            <span class="title">{{self.category}}</span>  
+            <h3>{{self.title}}</h3>
+            <div class="text">{{self.text}}</div>
+            <div class="link-box"><a href="/projects_detail">View Project</a></div>
+        </div> 
+    </div>
+</div>

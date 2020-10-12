@@ -1,0 +1,14 @@
+<!-- Slide Item -->
+{% load wagtailimages_tags %}
+{% image self.image fill-1831x1078 as img %}
+<div class="slide-item" style="background-image: url({{ img.url }});">
+    <div class="auto-container">
+        <div class="content-box">
+            <span class="title">{{self.title}}</span>
+            <h2>{{self.text}}</h2>
+            <div class="video-link">
+                <a href="{{video_link}}" data-fancybox="gallery" data-caption=""><i class="icon fa fa-play" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

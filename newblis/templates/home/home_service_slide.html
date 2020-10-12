@@ -1,0 +1,12 @@
+<!-- Service Block -->
+{% load wagtailimages_tags %}
+{% image self.image fill-270x288 as img %}
+<div class="service-block-two">
+    <div class="inner-box">
+        <div class="image-box"><figure class="image"><a href="/services"><img src="{{ img.url }}" alt=""></a></figure></div>
+        <div class="caption-box">
+            <h3><a href="/services">{{self.text}}</a></h3>
+            <div class="link-box"><a href="/services">Read More <i class="fa fa-angle-double-right"></i></a></div>
+        </div>
+    </div>
+</div>

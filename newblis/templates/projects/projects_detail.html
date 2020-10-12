@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags wagtailimages_tags static %}
+{% block content %}
+    {% include 'banner.html' %}
+
+    <!--Project Detail Section-->
+    <section class="project-details-section">
+        <div class="project-detail">
+            <div class="auto-container">
+                <!-- Upper Box -->
+                <div class="upper-box">
+                    <!--Project Tabs-->
+                    <div class="project-tabs tabs-box clearfix">
+                        <!--Tab Btns-->                        
+                        <ul class="tab-btns tab-buttons clearfix">
+                            {% for image in page.images %}
+                            {% image image.value.img fill-170x170 as project_img %}
+                                <li data-tab="#tab-{{forloop.counter}}" class="tab-btn {% if forloop.counter == 1 %} active-btn {% endif %}"><img src="{{project_img.url}}" alt=""></li>
+                            {% endfor %}
+                        </ul>
+                        
+                        <!--Tabs Container-->
+                        <div class="tabs-content">
+                            {% for image in page.images %}
+                            {% image image.value.img fill-970x560 as project_img %}
+                                <div class="tab {% if forloop.counter == 1 %} active-tab {% endif %}" id="tab-{{forloop.counter}}">
+                                    <figure class="image"><a href="{{project_img.url}}" class="lightbox-image" data-fancybox="images"><img src="{{project_img.url}}" alt=""></a></figure>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Lower Content-->
+                <div class="lower-content"> 
+                    <div class="row clearfix">
+                        <!--Content Column-->
+                        <div class="content-column col-lg-8 col-md-12 col-sm-12">
+                            <div class="inner-column">
+                                <h2>Project Descripation</h2>
+                                {{page.project_description | safe}}
+                            </div>
+                        </div>
+                        
+                        <!--Info Column-->
+                        <div class="info-column col-lg-4 col-md-12 col-sm-12 ">
+                            <div class="inner-column wow fadeInRight">
+                                <h3>Project Information</h3>
+                                {{page.project_information | safe}}
+
+                                <!--Help Box-->
+                                <div class="help-box-two">
+                                    <div class="inner">
+                                        <span class="title">Quick Contact</span>
+                                        <h2>Get Solution</h2>
+                                        <div class="text">Contact us at the Interior office nearest to you or submit a business inquiry online.</div>
+                                        <a class="theme-btn btn-style-two" href="/contact">Contact</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Portfolio Details-->
+
+{% endblock %}

@@ -1,0 +1,17 @@
+<!-- Team Block -->
+{% load wagtailimages_tags %}
+{% image self.photo fill-320x470 as photo %}
+<div class="team-block col-lg-4 col-md-6 col-sm-12">
+    <div class="inner-box">
+        <div class="image-box">
+            <div class="image"><a href="/about"><img src="{{photo.url}}" alt=""></a></div>
+            <ul class="social-links">
+                <li><a href="{{self.facebook}}"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="{{self.linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="{{self.instagram}}"><i class="fa fa-instagram"></i></a></li>                
+            </ul>
+            <h3 class="name"><a href="/about">{{self.name}}</a></h3>
+        </div>
+        <span class="designation">{{self.position}}</span>
+    </div>
+</div>

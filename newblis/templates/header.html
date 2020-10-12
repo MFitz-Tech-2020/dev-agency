@@ -1,0 +1,49 @@
+{% load wagtailcore_tags wagtailimages_tags static %}
+<!-- Main Header-->
+<header class="main-header header-style-four">
+    <div class="header-top">
+        <div class="auto-container clearfix">
+            <div class="top-right">
+                <ul class="contact-info">
+                    <li><span>PHONE :</span> (503) 405-6045</li>
+                    <li><span>EMAIL :</span> <a href="#">paulkatok77@gmail.com</a></li>
+                </ul>  
+            </div>
+        </div>
+    </div>
+
+    <div class="header-lower">
+        <div class="auto-container">
+            <div class="main-box clearfix">
+                <div class="logo-box">
+                    {% image page.navigation_bar.logo fill-155x70 as logo_img %}
+                    <div class="logo"><a href="/"><img src="{{logo_img.url}}" alt="" title=""></a></div>
+                </div>
+
+                <div class="nav-outer">
+                    <!-- Main Menu -->
+                    <nav class="main-menu navbar-expand-md ">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->      
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon flaticon-menu-button"></span>
+                            </button>
+                        </div>
+                        
+                        <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                            <ul class="navigation clearfix">
+                                <li class="{% if self.title == 'Home' %} current {% endif %}"><a href="/">Home</a></li>
+                                <li class="{% if self.title == 'About' %} current {% endif %}"><a href="/about">About</a></li>
+                                <li class="{% if self.title == 'Services' %} current {% endif %}"><a href="/services">Services</a></li>
+                                <li class="{% if self.title == 'Projects' %} current {% endif %}"><a href="/projects">Projects</a></li>
+                                <li class="{% if self.title == 'Blog' %} current {% endif %}"><a href="/blog">Blog</a></li>
+                                <li class="{% if self.title == 'Contact' %} current {% endif %}"><a href="/contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav><!-- Main Menu End-->                        
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--End Main Header -->

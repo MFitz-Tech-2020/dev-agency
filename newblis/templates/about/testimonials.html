@@ -1,0 +1,14 @@
+<!-- Testimonial block two -->
+{% load wagtailimages_tags %}
+{% image self.photo fill-90x90 as img %}
+
+<div class="testimonial-block-two">
+    <div class="inner-box">
+        <div class="text">{{self.feedback}}</div>
+        <div class="info-box">
+            <div class="thumb"><img src="{{img.url}}" alt=""></div>
+            <h5 class="name">{{self.client_name}}</h5>
+            <span class="date">{{self.date|date:"M d Y"}}</span>
+        </div>
+    </div>
+</div>
